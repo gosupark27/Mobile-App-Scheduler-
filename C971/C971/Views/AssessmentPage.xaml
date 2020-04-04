@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="C971.Views.AssessmentPage"
+             Title="Change l8r Assessments">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel"/>
+        <ToolbarItem Text="Save"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="15" Spacing="20">
+            <Entry x:Name="PerformanceName" 
+                   Placeholder="Enter Performance Exam Name"
+                   FontSize="Medium"/>
+            <Label Text="Start Date:" />
+            <DatePicker MinimumDate="01/01/2020"
+                        MaximumDate="12/31/2050"
+                        Format="D"
+                        Date="04/03/2020"
+                        x:Name="PerformanceStart"/>
+            <Label Text="End Date:" />
+            <DatePicker MinimumDate="01/01/2020"
+                        MaximumDate="12/31/2050"
+                        Format="D"
+                        Date="04/03/2020"
+                        x:Name="PerformanceEnd"/>
+            <StackLayout  Spacing="20">
+                <Entry x:Name="ObjectiveName" 
+                   Placeholder="Enter Objective Exam Name"
+                   FontSize="Medium"
+                       />
+                <Label Text="Start Date:" />
+                <DatePicker MinimumDate="01/01/2020"
+                        MaximumDate="12/31/2050"
+                        Format="D"
+                        Date="04/03/2020"
+                        x:Name="ObjectiveStart"/>
+                <Label Text="End Date:" />
+                <DatePicker MinimumDate="01/01/2020"
+                        MaximumDate="12/31/2050"
+                        Format="D"
+                        Date="04/03/2020"
+                        x:Name="ObjectiveEnd"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

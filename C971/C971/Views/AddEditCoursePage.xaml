@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="C971.Views.AddEditCoursePage"
+             Title="{Binding AddOrEdit}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel"/>
+        <ToolbarItem Text="Save"/>
+    </ContentPage.ToolbarItems>
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="Add_Clicked"/>
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked"/>
+        <ToolbarItem Text="Edit" Clicked="Edit_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Entry x:Name="CourseName" 
+                   Placeholder="Enter Course Name"
+                   FontSize="Medium"/>
+            <Label Text="Course Status:"
+                   FontSize="Medium"/>
+            <Picker x:Name="CourseStatus" FontSize="Medium">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                        <x:String>Dropped</x:String>
+                        <x:String>Plan to take</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Text="Start Date:" />
+            <DatePicker MinimumDate="01/01/2020"
+                        MaximumDate="12/31/2050"
+                        Format="D"
+                        Date="04/03/2020"
+                        x:Name="CourseStart"/>
+            <Label Text="End Date:" />
+            <DatePicker MinimumDate="01/01/2020"
+                        MaximumDate="12/31/2050"
+                        Format="D"
+                        Date="04/03/2020"
+                        x:Name="CourseEnd"/>
+
+            <!--Instructor Field w/button to go to InstructorPage-->
+            <StackLayout Orientation="Horizontal" 
+                         HeightRequest="50"
+                         BackgroundColor="Accent"
+                         Padding="5">
+                <StackLayout Spacing="0"
+                             Orientation="Horizontal"
+                             HorizontalOptions="Start">
+                    <Label Text="Instructor" 
+                       VerticalOptions="Center" 
+                       HorizontalOptions="StartAndExpand"
+                       Padding="10"/>
+                </StackLayout>
+
+                <StackLayout Spacing="0"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="EndAndExpand">
+                    <Button    Text="View Instructor" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="StartAndExpand"
+                               Padding="10"
+                               x:Name="InstructorBtn"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!--Assessment Field w/button to go to AssessmentPage-->
+            <StackLayout Orientation="Horizontal" 
+                         HeightRequest="50"
+                         BackgroundColor="Accent"
+                         Padding="5">
+                <StackLayout Spacing="0"
+                             Orientation="Horizontal"
+                             HorizontalOptions="Start">
+                    <Label Text="Assessment" 
+                       VerticalOptions="Center" 
+                       HorizontalOptions="StartAndExpand"
+                       Padding="10"/>
+                </StackLayout>
+
+                <StackLayout Spacing="0"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="EndAndExpand">
+                    <Button Text="View Assessment" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="StartAndExpand"
+                               Padding="10"
+                               x:Name="AssessmentBtn"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!--Note Field w/button to go to NotePage-->
+            <StackLayout Orientation="Horizontal" 
+                         HeightRequest="50"
+                         BackgroundColor="Accent"
+                         Padding="5">
+                <StackLayout Spacing="0"
+                             Orientation="Horizontal"
+                             HorizontalOptions="Start">
+                    <Label Text="Note" 
+                       VerticalOptions="Center" 
+                       HorizontalOptions="StartAndExpand"
+                       Padding="10"/>
+                </StackLayout>
+
+                <StackLayout Spacing="0"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="EndAndExpand">
+                    <Button Text="View Note" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="StartAndExpand"
+                               Padding="10"
+                               x:Name="NoteBtn"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
