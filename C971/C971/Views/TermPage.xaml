@@ -7,7 +7,7 @@
              x:Class="C971.Views.TermPage"
              Title="Terms">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="Add_Clicked"/>
+        <ToolbarItem Text="Add"/>
     </ContentPage.ToolbarItems>
 
     <ListView x:Name="MyListView"
