@@ -8,6 +8,7 @@ namespace C971
 {
 	public partial class App : Application
 	{
+		public static string DatabaseLocation = string.Empty;
 
 		public App()
 		{
@@ -15,6 +16,14 @@ namespace C971
 
 			DependencyService.Register<MockDataStore>();
 			MainPage = new MainPage();
+		}
+
+		public App(string databaseLocation)
+		{
+
+			InitializeComponent();
+			MainPage = new NavigationPage(new MainPage());
+			DatabaseLocation = databaseLocation;
 		}
 
 		protected override void OnStart()

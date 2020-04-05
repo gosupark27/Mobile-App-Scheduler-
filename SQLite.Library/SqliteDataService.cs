@@ -13,9 +13,10 @@ namespace SQLite.Library
 		{
 			if(_database == null)
 			{
-				string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "");
+				string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "C971Db.db3");
 				_database = new SQLiteConnection(dbPath);
 			}
+			
 		}
 	}
 }
