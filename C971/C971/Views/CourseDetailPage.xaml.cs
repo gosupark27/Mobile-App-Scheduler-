@@ -1,4 +1,5 @@
-﻿using System;
+﻿using C971.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,15 +18,25 @@ namespace C971.Views
 			InitializeComponent();
 		}
 
-		async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+		public CourseDetailPage(Course course)
 		{
-			if (e.Item == null)
-				return;
+			InitializeComponent();
+			App.Database.GetCourseAsync(course.course);
+			//TODO: Populate the fields idk lol. 
+		}
 
-			await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+		async void Edit_Clicked()
+		{
+			await Navigation.PushModalAsync(new NavigationPage(new AddEditTermPage()));
+		}
 
-			//Deselect Item
-			((ListView)sender).SelectedItem = null;
+		//Need to get binding context of selected course...(maybe look @ itemtappedeventargs??) 
+		async void Delete_Clicked()
+		{
+			var course = (Course)BindingContext;
+			await App.Database.DeleteCourseAsync(course);
+			await Navigation.PopModalAsync();
+			
 		}
 	}
 

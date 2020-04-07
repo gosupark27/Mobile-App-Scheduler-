@@ -14,8 +14,6 @@ namespace C971.Models
 		[ForeignKey(typeof(Term))]
 		public int termId { get; set; }
 
-
-
 		[OneToMany]
 		public List<Note> Notes { get; set; }
 

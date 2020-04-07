@@ -8,15 +8,9 @@
              Title="{Binding AddOrEdit}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel"/>
-        <ToolbarItem Text="Save"/>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked"/>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked"/>
     </ContentPage.ToolbarItems>
-
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="Add_Clicked"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked"/>
-        <ToolbarItem Text="Edit" Clicked="Edit_Clicked"/>
-    </ContentPage.ToolbarItems>-->
 
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">

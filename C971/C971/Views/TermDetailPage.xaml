@@ -8,9 +8,9 @@
               Title="Term Details">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Delete"/>
-        <ToolbarItem Text="Edit"/>
-        <ToolbarItem Text="View"/>
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked"/>
+        <ToolbarItem Text="Edit" Clicked="Edit_Clicked"/>
+        <ToolbarItem Text="View" Clicked="View_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

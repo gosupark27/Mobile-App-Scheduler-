@@ -4,34 +4,35 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="C971.Views.TermPage"
-             Title="Terms">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddTerm_Clicked"/>
-    </ContentPage.ToolbarItems>
+             x:Class="C971.Views.CoursePage"
+             Title="Course">
 
-    <ListView x:Name="MyListView"
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="Add_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+  <ListView x:Name="MyListView"
             ItemsSource="{Binding Items}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
-        <d:ListView.ItemsSource>
-            <x:Array Type="{x:Type x:String}">
-                <x:String>Term 1</x:String>
-                <x:String>Term 2</x:String>
-                <x:String>Term 3</x:String>
-                <x:String>Term 4</x:String>
-                <x:String>Term 5</x:String>
-            </x:Array>
-        </d:ListView.ItemsSource>
-        <!--Built in Cells-->
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding .}" d:Text="{Binding .}" />
-            </DataTemplate>
-        </ListView.ItemTemplate>
-
-        <!--Custom View Cells-->
-        <!--
+    <d:ListView.ItemsSource>
+        <x:Array Type="{x:Type x:String}">
+            <x:String>Item 1</x:String>
+            <x:String>Item 2</x:String>
+            <x:String>Item 3</x:String>
+            <x:String>Item 4</x:String>
+            <x:String>Item 5</x:String>
+        </x:Array>
+    </d:ListView.ItemsSource>
+    <!--Built in Cells-->
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell Text="{Binding .}" d:Text="{Binding .}" />
+        </DataTemplate>
+    </ListView.ItemTemplate>
+    
+    <!--Custom View Cells-->
+    <!--
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
@@ -47,5 +48,5 @@
       </DataTemplate>
     </ListView.ItemTemplate>
     -->
-    </ListView>
+  </ListView>
 </ContentPage>

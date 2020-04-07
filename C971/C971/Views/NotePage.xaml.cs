@@ -1,4 +1,5 @@
-﻿using System;
+﻿using C971.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,18 @@ namespace C971.Views
 		public NotePage()
 		{
 			InitializeComponent();
+		}
+
+		async void Cancel_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PopAsync();
+		}
+
+		async void Save_Clicked(object sender, EventArgs e)
+		{
+			var note = (Note)BindingContext;
+			await App.Database.SaveNoteAsync(note);
+			await Navigation.PopAsync();
 		}
 	}
 }

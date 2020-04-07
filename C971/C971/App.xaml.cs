@@ -8,22 +8,27 @@ namespace C971
 {
 	public partial class App : Application
 	{
-		public static string DatabaseLocation = string.Empty;
-
+		static C971Database database;
 		public App()
 		{
 			InitializeComponent();
 
-			DependencyService.Register<MockDataStore>();
-			MainPage = new MainPage();
+			var nav = new NavigationPage(new TermPage());
+
+			//DependencyService.Register<MockDataStore>();
+			MainPage = nav;
 		}
 
-		public App(string databaseLocation)
+		public static C971Database Database
 		{
-
-			InitializeComponent();
-			MainPage = new NavigationPage(new MainPage());
-			DatabaseLocation = databaseLocation;
+			get
+			{
+				if(database == null)
+				{
+					database = new C971Database();
+				}
+				return database;
+			}
 		}
 
 		protected override void OnStart()

@@ -28,6 +28,17 @@ namespace C971.ViewModels
 			set { SetProperty(ref title, value); }
 		}
 
+
+		protected void SetValue<T>(ref T backingField, T value, [CallerMemberName] string propertyName = null)
+		{
+			if (EqualityComparer<T>.Default.Equals(backingField, value))
+				return;
+
+			backingField = value;
+
+			OnPropertyChanged(propertyName);
+		}
+
 		protected bool SetProperty<T>(ref T backingStore, T value,
 			[CallerMemberName]string propertyName = "",
 			Action onChanged = null)
